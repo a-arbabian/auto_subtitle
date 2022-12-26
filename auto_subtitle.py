@@ -13,7 +13,7 @@ FONT = "Akira Expanded"
 def run(input_path: str) -> None:
     print("Transcribing audio...")
     model = whisper.load_model("base")
-    result = model.transcribe(input_path)
+    result = model.transcribe(input_path, verbose=False)
 
     subtitle_path = os.path.splitext(input_path)[0] + ".srt"
     with open(subtitle_path, "w", encoding="utf-8") as srt_file:
